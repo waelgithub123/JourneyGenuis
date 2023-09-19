@@ -20,10 +20,15 @@ public class HelloApplication extends Application {
     //function that creates a window that is 1920 x 1080
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1200, 700);
+        Scene scene = new Scene(fxmlLoader.load(), 1200, 700);//
         stage.setTitle("Hello!");
         stage.setScene(scene);
-        stage.show();
+        stage.show();//
+        stage.setResizable(true);//makes the window resizable
+
+
+
+
     }
 
 
