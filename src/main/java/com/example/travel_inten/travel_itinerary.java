@@ -41,10 +41,11 @@ public class travel_itinerary extends Application {
     private Pane createClickablePanel(String labelText) {
         // Create a simple panel with a colored background and a label
         Pane panel = new Pane();
-        panel.setStyle("-fx-background-color: #3498db;");
+        panel.setStyle("-fx-background-color: #645d5d;");
+
 
         Label label = new Label(labelText);
-        label.setStyle("-fx-text-fill: white;");
+        label.setStyle("-fx-text-fill: rgba(94,86,86,0.82);");
         label.setPadding(new Insets(5));
 
         panel.getChildren().add(label);
