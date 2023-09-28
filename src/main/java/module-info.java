@@ -8,6 +8,7 @@ module com.example.travel_inten {
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
     requires com.almasb.fxgl.all;
+    requires org.xerial.sqlitejdbc;
 
     opens com.example.travel_inten to javafx.fxml;
     exports com.example.travel_inten;
