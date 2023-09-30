@@ -31,11 +31,49 @@ public class Database {
             Statement statement = connection.createStatement();
 
             // Create a table
-            String createTableSQL = "CREATE TABLE IF NOT EXISTS my_table ("
+            String createTableSQL = "CREATE TABLE IF NOT EXISTS budget_table ("
                     + "id INTEGER PRIMARY KEY AUTOINCREMENT,"
-                    + "name TEXT NOT NULL,"
-                    + "age INTEGER)";
+                    + "budget INTEGER,"
+                    + "plane_ticket INTEGER,"
+                    + "hotel_price INTEGER,"
+                    + "food INTEGER,"
+                    + "miscellaneous INTEGER,"
+                    + "total INTEGER,)";
+
             statement.execute(createTableSQL);
+
+            String createMyTableSQL = "CREATE TABLE IF NOT EXISTS Flight ("
+                    + "id INTEGER PRIMARY KEY AUTOINCREMENT,"
+                    + "locations_going TEXT,"
+                    + "locations_return TEXT,"
+                    + "going_times INTEGER,"
+                    + "return_times INTEGER,"
+                    + "difference_hours INTEGER,)";
+            statement.execute(createMyTableSQL);
+
+            String createtable_weatherSQL = "CREATE TABLE IF NOT EXISTS weather_table ("
+                    + "id INTEGER PRIMARY KEY AUTOINCREMENT,"
+                    + "location TEXT,"
+                    + "time TEXT,"
+                    + "temperature INTEGER,"
+                    + "humidity INTEGER,"
+                    + "wind_speed INTEGER,)";
+            statement.execute(createtable_weatherSQL);
+
+            String createTable_travel_adviseorySQL = "CREATE TABLE IF NOT EXISTS travel_adviseory_table ("
+                    + "id INTEGER PRIMARY KEY AUTOINCREMENT,"
+                    + "location TEXT,"
+                    + "advis_level TEXT,"
+                    + "travel_adviseory_description TEXT,)";
+            statement.execute(createTable_travel_adviseorySQL);
+
+            String createTable_hotelSQL = "CREATE TABLE IF NOT EXISTS hotel_table ("
+                    + "id INTEGER PRIMARY KEY AUTOINCREMENT,"
+                    + "hotel_name TEXT,"
+                    + "date_staying INTEGER,"
+                    + "ameneities TEXT,)";
+            statement.execute(createTable_hotelSQL);
+
 
             statement.close();
         } catch (SQLException e) {
