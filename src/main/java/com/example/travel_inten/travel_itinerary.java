@@ -63,3 +63,41 @@ public class travel_itinerary extends Application {
         launch(args);
     }
 }
+
+
+
+//import javafx.application.Application;
+//import javafx.scene.Scene;
+//import javafx.scene.layout.StackPane;
+//import javafx.stage.Stage;
+//import javafx.scene.paint.Color;
+//import javafx.scene.shape.Rectangle;
+//import javafx.stage.StageStyle;
+//
+//public class travel_itinerary extends Application {
+//    public static void main(String[] args) {
+//        launch(args);
+//    }
+//
+//    @Override
+//    public void start(Stage primaryStage) {
+//        primaryStage.initStyle(StageStyle.TRANSPARENT); // Set the window style to transparent
+//
+//        StackPane root = new StackPane();
+//        Rectangle background = new Rectangle(1920, 1080);
+//        background.setFill(Color.BLACK); // Set the background color to black
+//
+//        // Set the corner radius to make the window's corners rounded
+//        background.setArcWidth(50);
+//        background.setArcHeight(50);
+//
+//        root.getChildren().add(background);
+//
+//        Scene scene = new Scene(root, 1920, 1080);
+//        scene.setFill(Color.TRANSPARENT); // Make the scene background transparent
+//
+//        primaryStage.setScene(scene);
+//        primaryStage.show();
+//    }
+//}
+
