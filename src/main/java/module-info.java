@@ -11,6 +11,7 @@ module com.example.travel_inten {
     requires org.xerial.sqlitejdbc;
     requires org.apache.httpcomponents.httpcore;
     requires org.apache.httpcomponents.httpclient;
+    requires json.simple;
 
     opens com.example.travel_inten to javafx.fxml;
     exports com.example.travel_inten;
