@@ -217,9 +217,10 @@ import javafx.scene.control.TableView;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import org.opensky.api.OpenSkyApi;
+
 import org.opensky.api.OpenSkyStates;
 
-public class FlightDataViewer extends Application {
+public class AmaduesAPIClientFX extends Application {
 
     private final String username = "your_username";
     private final String password = "your_password";
