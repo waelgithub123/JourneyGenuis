@@ -204,117 +204,116 @@ package com.example.travel_inten;
 //}
 
 
-import javafx.application.Application;
-import javafx.beans.property.DoubleProperty;
-import javafx.beans.property.SimpleDoubleProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.scene.Scene;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
-import org.opensky.api.OpenSkyApi;
-
-import org.opensky.api.OpenSkyStates;
-
-public class AmaduesAPIClientFX extends Application {
-
-    private final String username = "your_username";
-    private final String password = "your_password";
-
-    public static void main(String[] args) {
-        launch(args);
-    }
-
-    @Override
-    public void start(Stage stage) {
-        stage.setTitle("Flight Data Viewer");
-
-        // Create a TableView to display flight data
-        TableView<FlightData> tableView = new TableView<>();
-        ObservableList<FlightData> flightDataList = FXCollections.observableArrayList();
-
-        TableColumn<FlightData, String> icao24Col = new TableColumn<>("ICAO24");
-        icao24Col.setCellValueFactory(cellData -> cellData.getValue().icao24Property());
-
-        TableColumn<FlightData, String> callsignCol = new TableColumn<>("Callsign");
-        callsignCol.setCellValueFactory(cellData -> cellData.getValue().callsignProperty());
-
-        TableColumn<FlightData, Double> latitudeCol = new TableColumn<>("Latitude");
-        latitudeCol.setCellValueFactory(cellData -> cellData.getValue().latitudeProperty().asObject());
-
-        TableColumn<FlightData, Double> longitudeCol = new TableColumn<>("Longitude");
-        longitudeCol.setCellValueFactory(cellData -> cellData.getValue().longitudeProperty().asObject());
-
-        tableView.getColumns().addAll(icao24Col, callsignCol, latitudeCol, longitudeCol);
-        tableView.setItems(flightDataList);
-
-        // Fetch and display flight data
-        OpenSkyApi api = new OpenSkyApi(username, password);
-        OpenSkyStates states = api.getStates(0, null);
-
-        states.getStates().forEach(state -> {
-            flightDataList.add(new FlightData(
-                    state.getIcao24(),
-                    state.getCallsign(),
-                    state.getLatitude(),
-                    state.getLongitude()
-            ));
-        });
-
-        // Create a layout and set it as the scene
-        VBox vbox = new VBox(tableView);
-        Scene scene = new Scene(vbox, 800, 600);
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    public static class FlightData {
-        private final String icao24;
-        private final String callsign;
-        private final double latitude;
-        private final double longitude;
-
-        public FlightData(String icao24, String callsign, double latitude, double longitude) {
-            this.icao24 = icao24;
-            this.callsign = callsign;
-            this.latitude = latitude;
-            this.longitude = longitude;
-        }
-
-        public String getIcao24() {
-            return icao24;
-        }
-
-        public String getCallsign() {
-            return callsign;
-        }
-
-        public double getLatitude() {
-            return latitude;
-        }
-
-        public double getLongitude() {
-            return longitude;
-        }
-
-        public StringProperty icao24Property() {
-            return new SimpleStringProperty(icao24);
-        }
-
-        public StringProperty callsignProperty() {
-            return new SimpleStringProperty(callsign);
-        }
-
-        public DoubleProperty latitudeProperty() {
-            return new SimpleDoubleProperty(latitude);
-        }
-
-        public DoubleProperty longitudeProperty() {
-            return new SimpleDoubleProperty(longitude);
-        }
-    }
-}
+//import javafx.application.Application;
+//import javafx.beans.property.DoubleProperty;
+//import javafx.beans.property.SimpleDoubleProperty;
+//import javafx.beans.property.SimpleStringProperty;
+//import javafx.beans.property.StringProperty;
+//import javafx.collections.FXCollections;
+//import javafx.collections.ObservableList;
+//import javafx.scene.Scene;
+//import javafx.scene.control.TableColumn;
+//import javafx.scene.control.TableView;
+//import javafx.scene.layout.VBox;
+//import javafx.stage.Stage;
+//import org.opensky.api.OpenSkyApi;
+//import org.opensky.api.OpenSkyStates;
+//
+//public class AmaduesAPIClientFX extends Application {
+//
+//    private final String username = "your_username";
+//    private final String password = "your_password";
+//
+//    public static void main(String[] args) {
+//        launch(args);
+//    }
+//
+//    @Override
+//    public void start(Stage stage) {
+//        stage.setTitle("Flight Data Viewer");
+//
+//        // Create a TableView to display flight data
+//        TableView<FlightData> tableView = new TableView<>();
+//        ObservableList<FlightData> flightDataList = FXCollections.observableArrayList();
+//
+//        TableColumn<FlightData, String> icao24Col = new TableColumn<>("ICAO24");
+//        icao24Col.setCellValueFactory(cellData -> cellData.getValue().icao24Property());
+//
+//        TableColumn<FlightData, String> callsignCol = new TableColumn<>("Callsign");
+//        callsignCol.setCellValueFactory(cellData -> cellData.getValue().callsignProperty());
+//
+//        TableColumn<FlightData, Double> latitudeCol = new TableColumn<>("Latitude");
+//        latitudeCol.setCellValueFactory(cellData -> cellData.getValue().latitudeProperty().asObject());
+//
+//        TableColumn<FlightData, Double> longitudeCol = new TableColumn<>("Longitude");
+//        longitudeCol.setCellValueFactory(cellData -> cellData.getValue().longitudeProperty().asObject());
+//
+//        tableView.getColumns().addAll(icao24Col, callsignCol, latitudeCol, longitudeCol);
+//        tableView.setItems(flightDataList);
+//
+//        // Fetch and display flight data
+//        OpenSkyApi api = new OpenSkyApi(username, password);
+//        OpenSkyStates states = api.getStates(0, null);
+//
+//        states.getStates().forEach(state -> {
+//            flightDataList.add(new FlightData(
+//                    state.getIcao24(),
+//                    state.getCallsign(),
+//                    state.getLatitude(),
+//                    state.getLongitude()
+//            ));
+//        });
+//
+//        // Create a layout and set it as the scene
+//        VBox vbox = new VBox(tableView);
+//        Scene scene = new Scene(vbox, 800, 600);
+//        stage.setScene(scene);
+//        stage.show();
+//    }
+//
+//    public static class FlightData {
+//        private final String icao24;
+//        private final String callsign;
+//        private final double latitude;
+//        private final double longitude;
+//
+//        public FlightData(String icao24, String callsign, double latitude, double longitude) {
+//            this.icao24 = icao24;
+//            this.callsign = callsign;
+//            this.latitude = latitude;
+//            this.longitude = longitude;
+//        }
+//
+//        public String getIcao24() {
+//            return icao24;
+//        }
+//
+//        public String getCallsign() {
+//            return callsign;
+//        }
+//
+//        public double getLatitude() {
+//            return latitude;
+//        }
+//
+//        public double getLongitude() {
+//            return longitude;
+//        }
+//
+//        public StringProperty icao24Property() {
+//            return new SimpleStringProperty(icao24);
+//        }
+//
+//        public StringProperty callsignProperty() {
+//            return new SimpleStringProperty(callsign);
+//        }
+//
+//        public DoubleProperty latitudeProperty() {
+//            return new SimpleDoubleProperty(latitude);
+//        }
+//
+//        public DoubleProperty longitudeProperty() {
+//            return new SimpleDoubleProperty(longitude);
+//        }
+//    }
+//}
