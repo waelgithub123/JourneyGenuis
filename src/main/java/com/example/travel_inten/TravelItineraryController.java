@@ -1,24 +1,34 @@
 package com.example.travel_inten;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 import javafx.scene.layout.VBox;
-import javafx.geometry.Pos;
-import javafx.event.ActionEvent;
-import javafx.scene.Scene;
+import javafx.scene.shape.Rectangle;
+import javafx.stage.Stage;
+import org.json.simple.JSONObject;
+import org.w3c.dom.events.MouseEvent;
+
+import java.io.IOException;
 
 public class TravelItineraryController {
 
-    @FXML
+
     private Label budgetLabel;
+
+    @FXML
+    private Stage budgetStage;
+
+    private final travel_advisory advisory = new travel_advisory();
+
 
     @FXML
     private TextField budgetTextField;
 
-    private Stage budgetStage;
 
     @FXML
     private void openBudgetWindow() {
@@ -62,10 +72,53 @@ public class TravelItineraryController {
         }
     }
 
-
-
     private void updateBudgetPanel(double budgetAmount) {
         budgetLabel.setText("Budget: $" + String.format("%.2f", budgetAmount));
     }
-}
 
+
+    private void handleAdvisoryPanelClick(MouseEvent event) {
+        Rectangle clickedPanel;
+        clickedPanel = (Rectangle) event.getTarget();
+
+        String countryCode = determineCountryCode(clickedPanel.getId());
+
+        if (countryCode != null) {
+            try {
+                JSONObject advisoryInfo = advisory.getTravelAdvisoryFromPanel(countryCode);
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    private String determineCountryCode(String panelId) {
+        switch (panelId) {
+            case "US":
+                return "US"; // United States
+            case "UK":
+                return "UK"; // United Kingdom
+            case "FR":
+                return "FR"; // France
+            case "DE":
+                return "DE"; // Germany
+            case "JP":
+                return "JP"; // Japan
+            case "CA":
+                return "CA"; // Canada
+            case "AU":
+                return "AU"; // Australia
+            case "IT":
+                return "IT"; // Italy
+            case "ES":
+                return "ES"; // Spain
+            case "BR":
+                return "BR"; // Brazil
+            case "IN":
+                return "IN"; // India
+            default:
+                return null;
+        }
+    }
+}

@@ -44,7 +44,7 @@ public class travel_advisory extends Application {
         primaryStage.show();
     }
 
-    private void getTravelAdvisory() {
+    public void getTravelAdvisory() {
         String countryCode = countryInput.getText().trim();
 
         if (!countryCode.isEmpty()) {
@@ -83,6 +83,25 @@ public class travel_advisory extends Application {
             }
         }
     }
+    public JSONObject getTravelAdvisoryFromPanel(String countryCode) throws IOException {
+        if (!countryCode.isEmpty()) {
+            String apiUrl = API_URL + countryCode;
+            String jsonResponse = getApiResponse(apiUrl);
+
+            JSONObject jsonObject = (JSONObject) JSONValue.parse(jsonResponse);
+            JSONObject data = (JSONObject) jsonObject.get("data");
+
+            if (data != null) {
+                JSONObject countryAdvisory = (JSONObject) data.get(countryCode);
+
+                if (countryAdvisory != null) {
+                    return countryAdvisory;
+                }
+            }
+        }
+        return null;
+    }
+
 
     private String getApiResponse(String apiUrl) throws IOException {
         StringBuilder result = new StringBuilder();
