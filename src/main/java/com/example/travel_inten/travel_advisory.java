@@ -27,6 +27,7 @@ public class travel_advisory extends Application {
     }
 
     @Override
+
     public void start(Stage primaryStage) {
         primaryStage.setTitle("Travel Advisory App");
         VBox root = new VBox(10);

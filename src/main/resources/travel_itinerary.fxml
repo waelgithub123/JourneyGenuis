@@ -1,57 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
-<StackPane xmlns:fx="http://javafx.com/fxml" alignment="CENTER" prefWidth="1344" prefHeight="756" fx:controller="com.example.travel_inten.TravelItineraryController">
+<StackPane alignment="CENTER" prefHeight="756" prefWidth="1344" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.travel_inten.TravelItineraryController">
     <Pane>
-        <Rectangle width="1344" height="756" fill="BLACK">
+        <Rectangle fill="BLACK" height="756" width="1344">
             <arcWidth>50.0</arcWidth>
             <arcHeight>50.0</arcHeight>
         </Rectangle>
-        <Rectangle width="220" height="320" fill="GRAY" onMouseClicked="#openBudgetWindow">
+        <Rectangle fill="GRAY" height="320" onMouseClicked="#openBudgetWindow" width="220">
             <arcWidth>50.0</arcWidth>
             <arcHeight>50.0</arcHeight>
             <layoutX>80.0</layoutX>
             <layoutY>60.0</layoutY>
         </Rectangle>
-        <Label text="Budget: $0.00">
-            <layoutX>100.0</layoutX>
-            <layoutY>400.0</layoutY>
+        <Label text="total budget: $0.00" textFill="#180000">
+            <layoutX>95.0</layoutX>
+            <layoutY>82.0</layoutY>
+         <font>
+            <Font size="18.0" />
+         </font>
         </Label>
-        <Rectangle width="950" height="131" fill="GRAY">
+        <Rectangle fill="GRAY" height="131" width="950">
             <arcWidth>50.0</arcWidth>
             <arcHeight>50.0</arcHeight>
             <layoutX>350.0</layoutX>
             <layoutY>70.0</layoutY>
         </Rectangle>
-        <Rectangle width="950" height="131" fill="GRAY">
+        <Rectangle fill="GRAY" height="131" width="950">
             <arcWidth>50.0</arcWidth>
             <arcHeight>50.0</arcHeight>
             <layoutX>350.0</layoutX>
             <layoutY>250.0</layoutY>
         </Rectangle>
-        <Rectangle width="430" height="230" fill="GRAY">
+        <Rectangle fill="GRAY" height="230" width="430">
             <arcWidth>50.0</arcWidth>
             <arcHeight>50.0</arcHeight>
             <layoutX>350.0</layoutX>
             <layoutY>450.0</layoutY>
         </Rectangle>
-        <Rectangle width="430" height="230" fill="GRAY">
+        <Rectangle fill="GRAY" height="230" width="430">
             <arcWidth>50.0</arcWidth>
             <arcHeight>50.0</arcHeight>
             <layoutX>850.0</layoutX>
             <layoutY>450.0</layoutY>
         </Rectangle>
-        <Rectangle width="220" height="230" fill="GRAY">
+        <Rectangle fill="GRAY" height="230" width="220">
             <arcWidth>50.0</arcWidth>
             <arcHeight>50.0</arcHeight>
             <layoutX>80.0</layoutX>
             <layoutY>450.0</layoutY>
         </Rectangle>
+      <Text layoutX="112.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Airplane Ticket : $0.00">
+         <font>
+            <Font size="15.0" />
+         </font></Text>
+      <Line endX="120.0" layoutX="180.0" layoutY="129.0" startX="-100.0" />
+      <Text layoutX="112.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="hotel : $0.00">
+         <font>
+            <Font size="15.0" />
+         </font></Text>
+      <Text layoutX="113.0" layoutY="238.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Food: $0.00">
+         <font>
+            <Font size="15.0" />
+         </font></Text>
+      <Text layoutX="114.0" layoutY="267.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Misc expenses: $0.00">
+         <font>
+            <Font size="15.0" />
+         </font></Text>
+      <Text layoutX="106.0" layoutY="348.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Expenses: $0.00">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Line endX="120.0" layoutX="180.0" layoutY="303.0" startX="-100.0" />
     </Pane>
 </StackPane>
