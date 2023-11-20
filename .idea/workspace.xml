@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="24d397ab-da1b-4fe8-a39d-a775b671530b" name="Changes" comment="" />
+    <list default="true" id="24d397ab-da1b-4fe8-a39d-a775b671530b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,7 +20,19 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="24cf15455dc8e8522237210c083423190dc33bde" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubProjectSettings">
+    <option name="branchProtectionPatterns">
+      <list>
+        <option value="main" />
+      </list>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -37,7 +51,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/waeld/Travel_inten/sqlite-jdbc-3.43.0.0.jar&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/waeld/Travel_inten&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -103,8 +117,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.travel_itinerary" />
-        <item itemvalue="Application.Database" />
         <item itemvalue="Application.HelloApplication" />
+        <item itemvalue="Application.Database" />
+        <item itemvalue="Application.travel_itinerary" />
+        <item itemvalue="Application.Database" />
       </list>
     </recent_temporary>
   </component>
@@ -133,21 +149,24 @@
       <workItem from="1696394116308" duration="931000" />
       <workItem from="1696459547959" duration="4415000" />
       <workItem from="1696483475040" duration="640000" />
+      <workItem from="1700462951273" duration="1553000" />
+      <workItem from="1700464794280" duration="152000" />
+      <workItem from="1700517428732" duration="1818000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/travel_inten/HelloApplication.java</url>
-          <line>11</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
