@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="24d397ab-da1b-4fe8-a39d-a775b671530b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TIME_LOG_4900.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/TIME_LOG_4900.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/travel_inten/TravelItineraryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/travel_inten/TravelItineraryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/travel_itinerary.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/travel_itinerary.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +39,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
@@ -163,7 +161,9 @@
       <workItem from="1700789366020" duration="2857000" />
       <workItem from="1700807114465" duration="253000" />
       <workItem from="1700807523484" duration="1130000" />
-      <workItem from="1700809335983" duration="6565000" />
+      <workItem from="1700809335983" duration="6683000" />
+      <workItem from="1700950985774" duration="1911000" />
+      <workItem from="1700957756497" duration="7557000" />
     </task>
     <servers />
   </component>
