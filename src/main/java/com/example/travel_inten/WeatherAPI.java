@@ -44,7 +44,7 @@ public class WeatherAPI extends Application {
         primaryStage.show();
     }
 
-    private void getWeatherForCity() {
+    public void getWeatherForCity() {
         String cityName = cityInput.getText().trim();
 
         if (!cityName.isEmpty()) {
@@ -89,7 +89,7 @@ public class WeatherAPI extends Application {
         }
     }
 
-    private String getWeatherData(String apiUrl) throws IOException {
+    public String getWeatherData(String apiUrl) throws IOException {
         StringBuilder result = new StringBuilder();
         URL url = new URL(apiUrl);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
