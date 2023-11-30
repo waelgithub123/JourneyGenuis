@@ -51,6 +51,22 @@ public class TravelItineraryController {
     }
 
 
+    //-----------------------------------
+
+    @FXML
+    private TextField passportCountryInput;
+
+    @FXML
+    private TextField destinationCountryInput;
+
+    @FXML
+    private Button getVisaRequirementsButton;
+
+    @FXML
+    private static Label visaRequirementsLabel;
+
+    private VisaUser visaUser;
+//--------------
     private void openBudgetWindow() {
         if (budgetStage == null) {
             budgetStage = new Stage();
@@ -208,6 +224,28 @@ public class TravelItineraryController {
             // Use weatherPane to display weather information
             weatherUser.fetchAndDisplayWeather(cityName, weatherPane);
         });
+    }
+    public void initializes() {
+        VisaRequirementsAPI visaRequirementsAPI = new VisaRequirementsAPI();
+        visaUser = new VisaUser(visaRequirementsAPI, passportCountryInput, destinationCountryInput);
+
+        getVisaRequirementsButton.setOnAction(event -> handleVisaRequirements());
+    }
+
+    public void handleVisaRequirements() {
+        visaUser.handleVisaRequirements();
+    }
+
+    // Method to display visa information in the label
+    public static void setVisaInformation(String visaInfo) {
+        // Assuming visaRequirementsLabel is the label to display visa information
+        visaRequirementsLabel.setText(visaInfo);
+    }
+
+    // Method to display an error message
+    public static void displayErrorMessage(String message) {
+        // Display the error message in the label or handle the error accordingly
+        visaRequirementsLabel.setText(message);
     }
 }
 

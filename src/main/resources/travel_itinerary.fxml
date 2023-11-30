@@ -28,23 +28,26 @@
             <layoutX>350.0</layoutX>
             <layoutY>250.0</layoutY>
         </Rectangle>
-        <Rectangle fx:id="wther_info_panel" fill="GRAY" height="230" width="430">
+        <Rectangle fx:id="wther_info_panel" fill="GRAY" height="230" width="430" onMouseClicked="#handleWeatherPanelClick">
             <arcWidth>50.0</arcWidth>
             <arcHeight>50.0</arcHeight>
             <layoutX>350.0</layoutX>
             <layoutY>450.0</layoutY>
         </Rectangle>
-        <Rectangle fx:id="vsa_requre_panel" fill="GRAY" height="230" width="430"  onMouseClicked="#handleWeatherPanelClick">
+        <Rectangle fx:id="vsa_requre_panel" fill="GRAY" height="230" width="430"  onMouseClicked="handleWeatherPanelClick">
             <arcWidth>50.0</arcWidth>
             <arcHeight>50.0</arcHeight>
             <layoutX>850.0</layoutX>
             <layoutY>450.0</layoutY>
         </Rectangle>
+
         <Rectangle fx:id="trvl_advs_panel" fill="GRAY" height="230" width="220">
             <arcWidth>50.0</arcWidth>
             <arcHeight>50.0</arcHeight>
             <layoutX>66.0</layoutX>
             <layoutY>450.0</layoutY>
+
         </Rectangle>
+
     </Pane>
 </StackPane>

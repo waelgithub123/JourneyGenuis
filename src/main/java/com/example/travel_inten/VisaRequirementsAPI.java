@@ -83,4 +83,10 @@ public class VisaRequirementsAPI extends Application {
 
         return result.toString();
     }
+    public String fetchVisaRequirements(String passportCountryCode, String destinationCountryCode) throws IOException {
+        String apiUrl = API_URL + passportCountryCode + "/" + destinationCountryCode;
+        String jsonResponse = getApiResponse(apiUrl);
+        JSONObject jsonObject = (JSONObject) JSONValue.parse(jsonResponse);
+        return jsonObject.toString();
+    }
 }

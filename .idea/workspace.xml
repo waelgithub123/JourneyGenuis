@@ -7,7 +7,7 @@
     <list default="true" id="24d397ab-da1b-4fe8-a39d-a775b671530b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/travel_inten/TravelItineraryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/travel_inten/TravelItineraryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/travel_inten/WeatherAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/travel_inten/WeatherAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/travel_inten/VisaRequirementsAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/travel_inten/VisaRequirementsAPI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/travel_itinerary.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/travel_itinerary.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -107,6 +107,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="VisaRequirementsAPI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.travel_inten.VisaRequirementsAPI" />
+      <module name="Travel_inten" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.travel_inten.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="WeatherAPI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.travel_inten.WeatherAPI" />
       <module name="Travel_inten" />
@@ -136,10 +149,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.travel_itinerary" />
+        <item itemvalue="Application.VisaRequirementsAPI" />
         <item itemvalue="Application.WeatherAPI" />
         <item itemvalue="Application.HelloApplication" />
         <item itemvalue="Application.Database" />
-        <item itemvalue="Application.travel_itinerary" />
       </list>
     </recent_temporary>
   </component>
@@ -179,7 +192,8 @@
       <workItem from="1700809335983" duration="6683000" />
       <workItem from="1700950985774" duration="1911000" />
       <workItem from="1700957756497" duration="7557000" />
-      <workItem from="1701145389269" duration="11874000" />
+      <workItem from="1701145389269" duration="12109000" />
+      <workItem from="1701323977392" duration="1651000" />
     </task>
     <servers />
   </component>
