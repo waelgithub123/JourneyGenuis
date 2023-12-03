@@ -3,6 +3,7 @@ package com.example.travel_inten;
 
 import javafx.scene.input.MouseEvent;
 
+import java.util.logging.Logger;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -22,6 +23,7 @@ public class TravelItineraryController {
     @FXML
     private Rectangle wther_info_panel;
 
+    private static final Logger logger = Logger.getLogger(TravelItineraryController.class.getName());
     private WeatherUser weatherUser;
     public TravelItineraryController(Pane displayPane) {
         this.weatherUser = new WeatherUser(displayPane);
@@ -53,19 +55,19 @@ public class TravelItineraryController {
 
     //-----------------------------------
 
-    @FXML
-    private TextField passportCountryInput;
+//    @FXML
+//    private TextField passportCountryInput;
+//
+//    @FXML
+//    private TextField destinationCountryInput;
+//
+//    @FXML
+//    private Button getVisaRequirementsButton;
+//
+//    @FXML
+  //  private static Label visaRequirementsLabel;
 
-    @FXML
-    private TextField destinationCountryInput;
-
-    @FXML
-    private Button getVisaRequirementsButton;
-
-    @FXML
-    private static Label visaRequirementsLabel;
-
-    private VisaUser visaUser;
+    //private VisaUser visaUser;
 //--------------
     private void openBudgetWindow() {
         if (budgetStage == null) {
@@ -204,7 +206,7 @@ public class TravelItineraryController {
 
     public TravelItineraryController() {
         // Create a default Pane object (you may adjust this according to your requirements)
-        Pane defaultPane = new Pane();
+      Pane defaultPane = new Pane();
         this.weatherUser = new WeatherUser(defaultPane);
     }
 
@@ -221,31 +223,39 @@ public class TravelItineraryController {
         Optional<String> result = dialog.showAndWait();
 
         result.ifPresent(cityName -> {
+            logger.info("Weather panel clicked.");
+
+            // Log statement before calling fetchAndDisplayWeather
+            logger.info("Fetching weather for city: " + cityName);
+
             // Use weatherPane to display weather information
             weatherUser.fetchAndDisplayWeather(cityName, weatherPane);
         });
     }
-    public void initializes() {
-        VisaRequirementsAPI visaRequirementsAPI = new VisaRequirementsAPI();
-        visaUser = new VisaUser(visaRequirementsAPI, passportCountryInput, destinationCountryInput);
 
-        getVisaRequirementsButton.setOnAction(event -> handleVisaRequirements());
-    }
+    // Other methods...
 
-    public void handleVisaRequirements() {
-        visaUser.handleVisaRequirements();
-    }
-
-    // Method to display visa information in the label
-    public static void setVisaInformation(String visaInfo) {
-        // Assuming visaRequirementsLabel is the label to display visa information
-        visaRequirementsLabel.setText(visaInfo);
-    }
-
-    // Method to display an error message
-    public static void displayErrorMessage(String message) {
-        // Display the error message in the label or handle the error accordingly
-        visaRequirementsLabel.setText(message);
-    }
+//    public void initializes() {
+//        VisaRequirementsAPI visaRequirementsAPI = new VisaRequirementsAPI();
+//        visaUser = new VisaUser(visaRequirementsAPI, passportCountryInput, destinationCountryInput);
+//
+//        getVisaRequirementsButton.setOnAction(event -> handleVisaRequirements());
+//    }
+//@FXML
+//    public void handleVisaRequirements() {
+//        visaUser.handleVisaRequirements();
+//    }
+//
+//    // Method to display visa information in the label
+//    public static void setVisaInformation(String visaInfo) {
+//        // Assuming visaRequirementsLabel is the label to display visa information
+//        visaRequirementsLabel.setText(visaInfo);
+//    }
+//
+//    // Method to display an error message
+//    public static void displayErrorMessage(String message) {
+//        // Display the error message in the label or handle the error accordingly
+//        visaRequirementsLabel.setText(message);
+//    }
 }
 

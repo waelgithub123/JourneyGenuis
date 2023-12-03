@@ -7,7 +7,9 @@
     <list default="true" id="24d397ab-da1b-4fe8-a39d-a775b671530b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/travel_inten/TravelItineraryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/travel_inten/TravelItineraryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/travel_inten/VisaRequirementsAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/travel_inten/VisaRequirementsAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/travel_inten/VisaUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/travel_inten/VisaUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/travel_inten/WeatherUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/travel_inten/WeatherUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/travel_inten/travel_itinerary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/travel_inten/travel_itinerary.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/travel_itinerary.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/travel_itinerary.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -149,8 +151,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.travel_itinerary" />
-        <item itemvalue="Application.VisaRequirementsAPI" />
         <item itemvalue="Application.WeatherAPI" />
+        <item itemvalue="Application.VisaRequirementsAPI" />
         <item itemvalue="Application.HelloApplication" />
         <item itemvalue="Application.Database" />
       </list>
@@ -193,7 +195,8 @@
       <workItem from="1700950985774" duration="1911000" />
       <workItem from="1700957756497" duration="7557000" />
       <workItem from="1701145389269" duration="12109000" />
-      <workItem from="1701323977392" duration="1651000" />
+      <workItem from="1701323977392" duration="2009000" />
+      <workItem from="1701407819937" duration="17049000" />
     </task>
     <servers />
   </component>
