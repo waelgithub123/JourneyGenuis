@@ -6,10 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="24d397ab-da1b-4fe8-a39d-a775b671530b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/travel_inten/TravelItineraryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/travel_inten/TravelItineraryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/travel_inten/VisaUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/travel_inten/VisaUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/travel_inten/VisaUser.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/travel_inten/WeatherUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/travel_inten/WeatherUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/travel_inten/travel_itinerary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/travel_inten/travel_itinerary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/travel_itinerary.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/travel_itinerary.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -59,13 +61,13 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/waeld/Travel_inten/httpcore-4.4.16.jar&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/waeld/Downloads/slf4j.jar/slf4j.jar&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
@@ -82,20 +84,7 @@
       <recent name="C:\Users\waeld\Travel_inten" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.travel_itinerary">
-    <configuration name="Database" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.travel_inten.Database" />
-      <module name="Travel_inten" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.travel_inten.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.VisaRequirementsAPI">
     <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.travel_inten.HelloApplication" />
       <module name="Travel_inten" />
@@ -135,6 +124,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="travel_advisory" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.travel_inten.travel_advisory" />
+      <module name="Travel_inten" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.travel_inten.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="travel_itinerary" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.travel_inten.travel_itinerary" />
       <module name="Travel_inten" />
@@ -150,11 +152,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.VisaRequirementsAPI" />
+        <item itemvalue="Application.travel_advisory" />
         <item itemvalue="Application.travel_itinerary" />
         <item itemvalue="Application.WeatherAPI" />
-        <item itemvalue="Application.VisaRequirementsAPI" />
         <item itemvalue="Application.HelloApplication" />
-        <item itemvalue="Application.Database" />
       </list>
     </recent_temporary>
   </component>
@@ -196,7 +198,22 @@
       <workItem from="1700957756497" duration="7557000" />
       <workItem from="1701145389269" duration="12109000" />
       <workItem from="1701323977392" duration="2009000" />
-      <workItem from="1701407819937" duration="17049000" />
+      <workItem from="1701407819937" duration="17395000" />
+      <workItem from="1701626867407" duration="618000" />
+      <workItem from="1701627923413" duration="46000" />
+      <workItem from="1701628477187" duration="204000" />
+      <workItem from="1701628757327" duration="718000" />
+      <workItem from="1701630787771" duration="1188000" />
+      <workItem from="1701636181018" duration="2582000" />
+      <workItem from="1701736039332" duration="7913000" />
+      <workItem from="1701832287072" duration="6014000" />
+      <workItem from="1701840547538" duration="3597000" />
+      <workItem from="1701922738985" duration="38347000" />
+      <workItem from="1702448182360" duration="806000" />
+      <workItem from="1702449786350" duration="1153000" />
+      <workItem from="1702451173253" duration="383000" />
+      <workItem from="1702481092105" duration="1624000" />
+      <workItem from="1702496846714" duration="4563000" />
     </task>
     <servers />
   </component>
@@ -213,5 +230,20 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/travel_inten/WeatherUser.java</url>
+          <line>34</line>
+          <properties class="com.example.travel_inten.WeatherUser" method="fetchAndDisplayWeather">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

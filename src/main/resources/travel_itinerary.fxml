@@ -1,54 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
 
-<StackPane alignment="CENTER" prefHeight="756" prefWidth="1344" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.travel_inten.TravelItineraryController">
+<StackPane alignment="CENTER" prefHeight="756" prefWidth="1344"
+           xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="com.example.travel_inten.TravelItineraryController">
+
     <Pane>
         <Rectangle fill="BLACK" height="756" width="1344">
             <arcWidth>50.0</arcWidth>
             <arcHeight>50.0</arcHeight>
         </Rectangle>
-         <Pane fx:id="mainPane">
-        <Rectangle fx:id="budget_panel" fill="GRAY" height="320" layoutY="70.0" onMouseClicked="#handleBudgetPanelClick" width="220">
-            <arcWidth>50.0</arcWidth>
-            <arcHeight>50.0</arcHeight>
-            <layoutX>66.0</layoutX>
-    </Rectangle>
-              </Pane>
-        <Rectangle fx:id="flght_to_panel" fill="GRAY" height="131" width="950">
-            <arcWidth>50.0</arcWidth>
-            <arcHeight>50.0</arcHeight>
-            <layoutX>350.0</layoutX>
-            <layoutY>70.0</layoutY>
-        </Rectangle>
-        <Rectangle fx:id="retrn_floght_panel" fill="GRAY" height="131" width="950">
-            <arcWidth>50.0</arcWidth>
-            <arcHeight>50.0</arcHeight>
-            <layoutX>350.0</layoutX>
-            <layoutY>250.0</layoutY>
-        </Rectangle>
-        <Pane fx:id="weatherPane" />
-        <Rectangle fx:id="wther_info_panel" fill="GRAY" height="230" width="430" onMouseClicked="#handleWeatherPanelClick">
-            <arcWidth>50.0</arcWidth>
-            <arcHeight>50.0</arcHeight>
-            <layoutX>350.0</layoutX>
-            <layoutY>450.0</layoutY>
-        </Rectangle>
-        <Rectangle fx:id="vsa_requre_panel" fill="GRAY" height="230" width="430" >
-            <arcWidth>50.0</arcWidth>
-            <arcHeight>50.0</arcHeight>
-            <layoutX>850.0</layoutX>
-            <layoutY>450.0</layoutY>
-        </Rectangle>
 
-        <Rectangle fx:id="trvl_advs_panel" fill="GRAY" height="230" width="220">
-            <arcWidth>50.0</arcWidth>
-            <arcHeight>50.0</arcHeight>
-            <layoutX>66.0</layoutX>
-            <layoutY>450.0</layoutY>
+        <Pane fx:id="weatherPane">
+        <Pane fx:id="mainPane">
 
-        </Rectangle>
 
+
+            <Rectangle fx:id="budget_panel" fill="GRAY" height="320" layoutY="70.0" width="220" onMouseClicked="#handleBudgetPanelClick">
+                <arcWidth>50.0</arcWidth>
+                <arcHeight>50.0</arcHeight>
+                <layoutX>66.0</layoutX>
+            </Rectangle>
+
+            <Rectangle fx:id="flght_to_panel" fill="GRAY" height="131" width="950">
+                <arcWidth>50.0</arcWidth>
+                <arcHeight>50.0</arcHeight>
+                <layoutX>350.0</layoutX>
+                <layoutY>70.0</layoutY>
+            </Rectangle>
+
+            <Rectangle fx:id="retrn_floght_panel" fill="GRAY" height="131" width="950">
+                <arcWidth>50.0</arcWidth>
+                <arcHeight>50.0</arcHeight>
+                <layoutX>350.0</layoutX>
+                <layoutY>250.0</layoutY>
+            </Rectangle>
+
+
+            <Rectangle fx:id="wther_info_panel" fill="GRAY" height="230" width="430" onMouseClicked="#handleWeatherPanelClick">
+                <arcWidth>50.0</arcWidth>
+                <arcHeight>50.0</arcHeight>
+                <layoutX>350.0</layoutX>
+                <layoutY>450.0</layoutY>
+            </Rectangle>
+
+
+            <Rectangle fx:id="vsa_requre_panel" fill="GRAY" height="230" width="430">
+                <arcWidth>50.0</arcWidth>
+                <arcHeight>50.0</arcHeight>
+                <layoutX>850.0</layoutX>
+                <layoutY>450.0</layoutY>
+            </Rectangle>
+
+            <Rectangle fx:id="trvl_advs_panel" fill="GRAY" height="230" width="220" >
+                <arcWidth>50.0</arcWidth>
+                <arcHeight>50.0</arcHeight>
+                <layoutX>66.0</layoutX>
+                <layoutY>450.0</layoutY>
+            </Rectangle>
+        </Pane>
+        </Pane>
     </Pane>
+
 </StackPane>

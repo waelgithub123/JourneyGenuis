@@ -3,6 +3,8 @@ package com.example.travel_inten;
 import javafx.application.Platform;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
@@ -30,116 +32,76 @@ public class WeatherUser {
     }
 
 
-//public void fetchAndDisplayWeather(String cityName, Pane displayPane) {
-//    if (!cityName.isEmpty() && displayPane != null) {
-//        try {
-//            String apiUrl = BASE_API_URL + "q=" + cityName + "&units=imperial" + "&appid=" + API_KEY;
-//
-//            // Make an API call to OpenWeatherMap
-//            String jsonResponse = getWeatherData(apiUrl);
-//            System.out.println("Received JSON response: " + jsonResponse);
-//
-//            // Parse the JSON response
-//            JSONObject jsonObject = (JSONObject) JSONValue.parse(jsonResponse);
-//            JSONObject main = (JSONObject) jsonObject.get("main");
-//
-//            String city = jsonObject.get("name").toString(); // Get the city name
-//            double temperature = Double.parseDouble(main.get("temp").toString());
-//            JSONArray weatherArray = (JSONArray) jsonObject.get("weather");
-//            JSONObject weather = (JSONObject) weatherArray.get(0);
-//            String weatherDescription = weather.get("description").toString();
-//
-//            // Create labels for weather information
-//            Label locationLabel = new Label("Location: " + city);
-//            Label temperatureLabel = new Label("Temperature: " + temperature + "°F");
-//            Label weatherLabel = new Label("Weather: " + weatherDescription);
-//
-//            // Log weather information
-//            System.out.println("Location: " + city);
-//            System.out.println("Temperature: " + temperature + "°F");
-//            System.out.println("Weather: " + weatherDescription);
-//
-//            int fontSize = 18;
-//            String fontStyle = "-fx-font-size: " + fontSize + "px; -fx-font-weight: bold;";
-//            locationLabel.setStyle(fontStyle);
-//            temperatureLabel.setStyle(fontStyle);
-//            weatherLabel.setStyle(fontStyle);
-//            Platform.runLater(() -> {
-//                displayPane.getChildren().clear(); // Clear any previous content
-//
-//                // Set layout parameters for labels
-//                locationLabel.setLayoutX(355+5);
-//                locationLabel.setLayoutY(10+430);
-//                temperatureLabel.setLayoutX(355);
-//                temperatureLabel.setLayoutY(40);
-//                weatherLabel.setLayoutX(355);
-//                weatherLabel.setLayoutY(70);
-//
-//                // Add labels to the weatherPane
-//                displayPane.getChildren().addAll(locationLabel, temperatureLabel, weatherLabel);
-//            });
-//        } catch (IOException e) {
-//            // Handle IO Exception (e.g., display an error message)
-//            e.printStackTrace();
-//        }
-//    }
-//}
+public void fetchAndDisplayWeather(String cityName, Pane displayPane) {
+    if (!cityName.isEmpty() && displayPane != null) {
+        try {
+            String apiUrl = BASE_API_URL + "q=" + cityName + "&units=imperial" + "&appid=" + API_KEY;
+
+            // Make an API call to OpenWeatherMap
+            String jsonResponse = getWeatherData(apiUrl);
+            System.out.println("Received JSON response: " + jsonResponse);
+
+            // Parse the JSON response
+            JSONObject jsonObject = (JSONObject) JSONValue.parse(jsonResponse);
+            JSONObject main = (JSONObject) jsonObject.get("main");
+
+            String city = jsonObject.get("name").toString(); // Get the city name
+            double temperature = Double.parseDouble(main.get("temp").toString());
+            JSONArray weatherArray = (JSONArray) jsonObject.get("weather");
+            JSONObject weather = (JSONObject) weatherArray.get(0);
+            String weatherDescription = weather.get("description").toString();
+
+            // Create labels for weather information
+            Label locationLabel = new Label("Location: " + city);
+            Label temperatureLabel = new Label("Temperature: " + temperature + "°F");
+            Label weatherLabel = new Label("Weather: " + weatherDescription);
+
+            // Log weather information
+            System.out.println("Location: " + city);
+            System.out.println("Temperature: " + temperature + "°F");
+            System.out.println("Weather: " + weatherDescription);
+
+            int fontSize = 18;
+            String fontStyle = "-fx-font-size: " + fontSize + "px; -fx-font-weight: bold;";
+            locationLabel.setStyle(fontStyle);
+            temperatureLabel.setStyle(fontStyle);
+            weatherLabel.setStyle(fontStyle);
+
+            locationLabel.setStyle("-fx-background-color: transparent; -fx-font-size: 20px; -fx-font-weight: bold; -fx-layout-z: 2;");
+            temperatureLabel.setStyle("-fx-background-color: transparent; -fx-font-size: 20px; -fx-font-weight: bold; -fx-layout-z: 2;");
+            weatherLabel.setStyle("-fx-background-color: transparent; -fx-font-size: 20px; -fx-font-weight: bold; -fx-layout-z: 2;");
+
+            Platform.runLater(() -> {
+                // Set layout parameters for labels
+                locationLabel.setLayoutX(355 + 10);
+                locationLabel.setLayoutY(430 + 20 + 50);
+                temperatureLabel.setLayoutX(355 + 10);
+                temperatureLabel.setLayoutY(40 + 430 + 20 + 50);
+                weatherLabel.setLayoutX(355 + 10);
+                weatherLabel.setLayoutY(70 + 430 + 20 + 50 + 10);
+
+                // Set z-order for the labels
+                locationLabel.setMouseTransparent(true);
+                locationLabel.toFront();
+
+                temperatureLabel.setMouseTransparent(true);
+                temperatureLabel.toFront();
+
+                weatherLabel.setMouseTransparent(true);
+                weatherLabel.toFront();
 
 
-    public void fetchAndDisplayWeather(String cityName, Pane displayPane) {
-        if (!cityName.isEmpty() && displayPane != null) {
-            try {
-                String apiUrl = BASE_API_URL + "q=" + cityName + "&units=imperial" + "&appid=" + API_KEY;
 
-                // Make an API call to OpenWeatherMap
-                String jsonResponse = getWeatherData(apiUrl);
-                System.out.println("Received JSON response: " + jsonResponse); // Log received JSON response
+                // Add labels to the displayPane
+                displayPane.getChildren().addAll(locationLabel, temperatureLabel, weatherLabel);
+            });
 
-                // Parse the JSON response
-                JSONObject jsonObject = (JSONObject) JSONValue.parse(jsonResponse);
-                JSONObject main = (JSONObject) jsonObject.get("main");
-
-                cityName = jsonObject.get("name").toString();
-                double temperature = Double.parseDouble(main.get("temp").toString());
-                JSONArray weatherArray = (JSONArray) jsonObject.get("weather");
-                JSONObject weather = (JSONObject) weatherArray.get(0);
-                String weatherDescription = weather.get("description").toString();
-
-                // Create a Pane to hold the weather information labels
-                Pane weatherInfoPane = new Pane();
-                weatherInfoPane.setStyle("-fx-background-color: #D3D3D3;");
-                weatherInfoPane.setPrefSize(400, 150);
-
-                Label locationLabel = new Label("Location: " + cityName);
-                locationLabel.setStyle("-fx-font-size: 18px; -fx-font-weight: bold;");
-                locationLabel.setLayoutX(450);
-                locationLabel.setLayoutY(440);
-
-                Label temperatureLabel = new Label("Temperature: " + temperature + "°F");
-                temperatureLabel.setStyle("-fx-font-size: 18px; -fx-font-weight: bold;");
-                temperatureLabel.setLayoutX(20);
-                temperatureLabel.setLayoutY(50);
-
-                Label weatherLabel = new Label("Weather: " + weatherDescription);
-                weatherLabel.setStyle("-fx-font-size: 18px; -fx-font-weight: bold;");
-                weatherLabel.setLayoutX(20);
-                weatherLabel.setLayoutY(80);
-
-                // Add labels to the weatherInfoPane
-                weatherInfoPane.getChildren().addAll(locationLabel, temperatureLabel, weatherLabel);
-
-                // Add weatherInfoPane to displayPane with specific layout coordinates
-                displayPane.getChildren().add(weatherInfoPane);
-                displayPane.setLayoutX(350);
-                displayPane.setLayoutY(450);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+        } catch (IOException e) {
+            // Handle IO Exception (e.g., display an error message)
+            e.printStackTrace();
         }
     }
-
-
-
+}
 
     private String getWeatherData(String apiUrl) throws IOException {
         StringBuilder result = new StringBuilder();

@@ -1,37 +1,37 @@
 package com.example.travel_inten;
 
-
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
-
 import java.util.logging.Logger;
-
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+import java.util.logging.Logger;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.control.TextInputDialog;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.geometry.Pos;
-
+import org.json.simple.JSONObject;
 
 import java.util.Optional;
 
 public class TravelItineraryController {
+
+    //-------------------------------
     @FXML
     private Rectangle wther_info_panel;
-
+    @FXML
+    private Pane weatherPane;
     private static final Logger logger = Logger.getLogger(TravelItineraryController.class.getName());
     private WeatherUser weatherUser;
-    public TravelItineraryController(Pane displayPane) {
-        this.weatherUser = new WeatherUser(displayPane);
-    }
+    private Pane rootPane;
 
 
-//private Pane mainPane;
-
+    //-------------------------------------
 
 
     @FXML
@@ -39,36 +39,37 @@ public class TravelItineraryController {
 
     @FXML
     private Pane mainPane;
-
-    @FXML
-    private Pane weatherPane;
-
-
     @FXML
     public Stage budgetStage;
 
     @FXML
     private void initialize() {
         budget_panel.setOnMouseClicked(event -> openBudgetWindow());
+
     }
 
 
     //-----------------------------------
 
-//    @FXML
-//    private TextField passportCountryInput;
-//
-//    @FXML
-//    private TextField destinationCountryInput;
-//
-//    @FXML
-//    private Button getVisaRequirementsButton;
-//
-//    @FXML
-  //  private static Label visaRequirementsLabel;
+    @FXML
+    public Pane advisoryPane;
+    public AdvisoryUser advisoryUser;
 
-    //private VisaUser visaUser;
-//--------------
+    //-----------------------
+    public TravelItineraryController() {
+        // Create a default Pane object (you may adjust this according to your requirements)
+        Pane defaultPane = new Pane();
+        this.weatherUser = new WeatherUser(defaultPane);
+
+    }
+
+
+    public TravelItineraryController(Pane displayPane) {
+        this.weatherUser = new WeatherUser(displayPane);
+
+    }
+
+
     private void openBudgetWindow() {
         if (budgetStage == null) {
             budgetStage = new Stage();
@@ -133,8 +134,6 @@ public class TravelItineraryController {
     }
 
 
-
-
     private void handleUpdate(TextField budgetTextField, TextField ticketPriceTextField, TextField hotelCostTextField, TextField foodCostTextField, TextField miscExpensesTextField) {
         if (budgetStage != null) {
             String budgetInput = budgetTextField.getText();
@@ -159,61 +158,65 @@ public class TravelItineraryController {
     }
 
 
-
     private void updateBudgetPanel(double budgetAmount, double ticketPrice, double hotelCost, double foodCost, double miscExpenses) {
         mainPane.getChildren().removeIf(node -> node instanceof Label);
 
         Label budgetLabel = new Label("Budget: $" + String.format("%.2f", budgetAmount));
         budgetLabel.setStyle("-fx-font-size: 18px; -fx-font-weight: bold;");
         budgetLabel.setLayoutX(80);
-        budgetLabel.setLayoutY(90+10+8);
+        budgetLabel.setLayoutY(90 + 10 + 8);
 
         Label ticketPriceLabel = new Label("Airplane Ticket Price: $" + String.format("%.2f", ticketPrice));
         ticketPriceLabel.setStyle("-fx-font-size: 13px; -fx-font-weight: bold;");
         ticketPriceLabel.setLayoutX(80);
-        ticketPriceLabel.setLayoutY(130+10+8);
+        ticketPriceLabel.setLayoutY(130 + 10 + 8);
 
         Label hotelCostLabel = new Label("Hotel Cost: $" + String.format("%.2f", hotelCost));
         hotelCostLabel.setStyle("-fx-font-size: 13px; -fx-font-weight: bold;");
         hotelCostLabel.setLayoutX(80);
-        hotelCostLabel.setLayoutY(170+10+8);
+        hotelCostLabel.setLayoutY(170 + 10 + 8);
 
         Label foodCostLabel = new Label("Food Costs: $" + String.format("%.2f", foodCost));
         foodCostLabel.setStyle("-fx-font-size: 13px; -fx-font-weight: bold;");
         foodCostLabel.setLayoutX(80);
-        foodCostLabel.setLayoutY(210 +10+8);
+        foodCostLabel.setLayoutY(210 + 10 + 8);
 
         Label miscExpensesLabel = new Label("Miscellaneous Expenses: $" + String.format("%.2f", miscExpenses));
         miscExpensesLabel.setStyle("-fx-font-size: 13px; -fx-font-weight: bold;");
         miscExpensesLabel.setLayoutX(80);
-        miscExpensesLabel.setLayoutY(250+10+8);
+        miscExpensesLabel.setLayoutY(250 + 10 + 8);
 
-        double totalCost = budgetAmount + ticketPrice + hotelCost + foodCost + miscExpenses;
+        double totalCost = ticketPrice + hotelCost + foodCost + miscExpenses;
 
         Label totalCostLabel = new Label("Total Cost: $" + String.format("%.2f", totalCost));
         totalCostLabel.setStyle("-fx-font-size: 16px; -fx-font-weight: bold;");
         totalCostLabel.setLayoutX(80);
-        totalCostLabel.setLayoutY(290+10+8);
+        totalCostLabel.setLayoutY(290 + 10 + 8);
 
         mainPane.getChildren().addAll(budgetLabel, ticketPriceLabel, hotelCostLabel, foodCostLabel, miscExpensesLabel, totalCostLabel);
+
     }
 
 
-    public void handleBudgetPanelClick() {
-        // This method will handle the click event for the budget_panel Rectangle
+    public void handleBudgetPanelClick(MouseEvent event) {
+        System.out.println("Budget Panel Clicked"); // Debugging statement
+
+        // Call your method to open the budget window
         openBudgetWindow();
     }
 
-    public TravelItineraryController() {
-        // Create a default Pane object (you may adjust this according to your requirements)
-      Pane defaultPane = new Pane();
-        this.weatherUser = new WeatherUser(defaultPane);
-    }
+
+    //----------------------------------------------
 
     private void initializer() {
-        wther_info_panel.setOnMouseClicked(this::handleWeatherPanelClick);
+        weatherPane = new Pane(); // Create the weather pane
+        // Customize the weather pane as needed
+
+        // Add the weatherPane to the rootPane or another suitable container
+        rootPane.getChildren().add(weatherPane);
     }
 
+    // Other controller code
     public void handleWeatherPanelClick(javafx.scene.input.MouseEvent event) {
         TextInputDialog dialog = new TextInputDialog();
         dialog.setTitle("Enter City");
@@ -230,32 +233,63 @@ public class TravelItineraryController {
 
             // Use weatherPane to display weather information
             weatherUser.fetchAndDisplayWeather(cityName, weatherPane);
+
+            // Ensure weatherPane is brought to fro
         });
     }
+    //----------------------------------------------
 
-    // Other methods...
-
-//    public void initializes() {
-//        VisaRequirementsAPI visaRequirementsAPI = new VisaRequirementsAPI();
-//        visaUser = new VisaUser(visaRequirementsAPI, passportCountryInput, destinationCountryInput);
-//
-//        getVisaRequirementsButton.setOnAction(event -> handleVisaRequirements());
-//    }
-//@FXML
-//    public void handleVisaRequirements() {
-//        visaUser.handleVisaRequirements();
+//    public void initialize(URL location, ResourceBundle resources) {
+//        if (advisoryPane == null) {
+//            System.out.println("advisoryPane is null");
+//            logger.error("advisoryPane is null"); // Logging statement
+//        } else {
+//            this.advisoryUser = new AdvisoryUser(advisoryPane);
+//            logger.info("AdvisoryUser initialized."); // Logging statement
+//        }
 //    }
 //
-//    // Method to display visa information in the label
-//    public static void setVisaInformation(String visaInfo) {
-//        // Assuming visaRequirementsLabel is the label to display visa information
-//        visaRequirementsLabel.setText(visaInfo);
-//    }
+//    @FXML
+//    public void handleTravelAdvisoryPanelClick(MouseEvent event) {
+//        if (advisoryPane == null) {
+//            System.out.println("advisoryPane is null");
+//            logger.error("advisoryPane is null"); // Logging statement
+//            return;
+//        }
 //
-//    // Method to display an error message
-//    public static void displayErrorMessage(String message) {
-//        // Display the error message in the label or handle the error accordingly
-//        visaRequirementsLabel.setText(message);
+//        if (advisoryUser == null) {
+//            System.err.println("AdvisoryUser is not initialized properly.");
+//            logger.error("AdvisoryUser is not initialized properly."); // Logging statement
+//            return;
+//        }
+//
+//        TextInputDialog dialog = new TextInputDialog();
+//        dialog.setTitle("Enter Country Code");
+//        dialog.setHeaderText(null);
+//        dialog.setContentText("Enter country code:");
+//
+//        Optional<String> result = dialog.showAndWait();
+//
+//        result.ifPresent(countryCode -> {
+//            JSONObject advisoryData = advisoryUser.getTravelAdvisoryFromPanel(countryCode);
+//
+//            // Handle the advisoryData - Display it in the advisoryPane or perform any other actions
+//            if (advisoryData != null) {
+//                // Example: Display advisory information in a TextArea
+//                TextArea textArea = new TextArea(advisoryData.toJSONString());
+//                advisoryPane.getChildren().add(textArea);
+//                logger.info("Advisory information displayed."); // Logging statement
+//            } else {
+//                // Handle case when advisory data is not available
+//                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+//                alert.setTitle("Advisory Information");
+//                alert.setHeaderText(null);
+//                alert.setContentText("Advisory information not available for the entered country code.");
+//                alert.showAndWait();
+//                logger.warn("Advisory information not available."); // Logging statement
+//            }
+//        });
 //    }
 }
+//------------------------------------------------------------
 
